@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Zte F660 Control"

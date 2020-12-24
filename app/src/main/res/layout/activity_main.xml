@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchTab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSwitchClick"
+        android:text="Tab"
+        app:useMaterialThemeColors="true" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSwitchClick"
+        android:text="TV"
+        app:useMaterialThemeColors="true" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchAlisa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSwitchClick"
+        android:text="Alisa"
+        app:useMaterialThemeColors="true" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="586dp"
+        android:fadeScrollbars="false"
+        android:gravity="bottom"
+        android:isScrollContainer="true"
+        android:overScrollMode="always"
+        android:scrollIndicators="top|bottom|start|end|right"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbars="vertical"
+        android:text="TextView"
+        android:verticalScrollbarPosition="right" />
+
+</LinearLayout>
