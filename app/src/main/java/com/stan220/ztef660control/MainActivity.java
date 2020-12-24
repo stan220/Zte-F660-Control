@@ -6,7 +6,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,8 +50,14 @@ public class MainActivity extends AppCompatActivity {
         }));
 
         System.out.println("App started!!!");
-        new DownloadFilesTask(this).execute();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        System.out.println("App resumed!!!");
+        new DownloadFilesTask(this).execute();
     }
 
     public void onSwitchClick(View view) {
@@ -170,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                 switchAlisa.setChecked(false);
             }
 
-            Toast.makeText(context, "Состояние обновлено!", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Статус обновлён!", Toast.LENGTH_LONG).show();
         }
 
     }

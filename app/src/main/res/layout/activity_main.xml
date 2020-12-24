@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:foregroundGravity="fill"
+    android:orientation="vertical"
+    android:padding="20dp">
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/switchTab"
@@ -34,7 +36,8 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="586dp"
+        android:layout_height="538dp"
+        android:layout_gravity="fill"
         android:fadeScrollbars="false"
         android:gravity="bottom"
         android:isScrollContainer="true"
