@@ -19,5 +19,9 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew assembleDebug
         
-      - name: Publish release drafts
-        uses: test-room-7/action-publish-release-drafts@v0.1.1
+      - name: Debug APK Publisher
+        uses: ShaunLWM/action-release-debugapk@0.0.5
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          APP_FOLDER: app
+          RELEASE_TITLE: New Build
