@@ -61,8 +61,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onSwitchClick(View view) {
-        System.out.println("### click: " + view);
+        System.out.println("### switch clicked: " + view);
         new DownloadFilesTask(this).execute((SwitchMaterial) view);
+    }
+
+    public void onRefreshButtonClick(View view) {
+        System.out.println("### refresh clicked: " + view);
+        new DownloadFilesTask(this).execute();
     }
 
     private static class DownloadFilesTask extends AsyncTask<SwitchMaterial, Void, List<String>> {
@@ -70,6 +75,11 @@ public class MainActivity extends AppCompatActivity {
         private MainActivity context;
 
         public DownloadFilesTask(MainActivity context) {
+            context.findViewById(R.id.switchTab).setEnabled(false);
+            context.findViewById(R.id.switchTv).setEnabled(false);
+            context.findViewById(R.id.switchAlisa).setEnabled(false);
+            context.findViewById(R.id.button_refresh).setEnabled(false);
+
             this.context = context;
         }
 
@@ -77,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         protected List<String> doInBackground(SwitchMaterial... switches) {
             List<String> result = new ArrayList<>();
 
-            Socket s = null;
+            Socket s;
             try {
                 s = new Socket(InetAddress.getByName("192.168.100.1"), 23);
 
@@ -174,6 +184,11 @@ public class MainActivity extends AppCompatActivity {
             if (switchers.stream().anyMatch(str -> str.trim().toLowerCase().contains(alisaMac))) {
                 switchAlisa.setChecked(false);
             }
+
+            context.findViewById(R.id.switchTab).setEnabled(true);
+            context.findViewById(R.id.switchTv).setEnabled(true);
+            context.findViewById(R.id.switchAlisa).setEnabled(true);
+            context.findViewById(R.id.button_refresh).setEnabled(true);
 
             Toast.makeText(context, "Статус обновлён!", Toast.LENGTH_LONG).show();
         }

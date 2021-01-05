@@ -9,10 +9,19 @@
     android:orientation="vertical"
     android:padding="20dp">
 
+    <Button
+        android:id="@+id/button_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:onClick="onRefreshButtonClick"
+        android:text="Обновить" />
+
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/switchTab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:enabled="false"
         android:onClick="onSwitchClick"
         android:text="Tab"
         app:useMaterialThemeColors="true" />
@@ -21,6 +30,7 @@
         android:id="@+id/switchTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:enabled="false"
         android:onClick="onSwitchClick"
         android:text="TV"
         app:useMaterialThemeColors="true" />
@@ -29,6 +39,7 @@
         android:id="@+id/switchAlisa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:enabled="false"
         android:onClick="onSwitchClick"
         android:text="Alisa"
         app:useMaterialThemeColors="true" />
